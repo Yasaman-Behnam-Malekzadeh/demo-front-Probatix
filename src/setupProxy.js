@@ -4,11 +4,8 @@ module.exports = function (app) {
   app.use(
     "/api",
     createProxyMiddleware({
-      target: "https://frontend-test.getsandbox.com",
+      target: "https://demo-front.probatix.de",
       changeOrigin: true,
-      pathRewrite: {
-        "^/api": "/", // remove base path
-      },
     })
   );
 };

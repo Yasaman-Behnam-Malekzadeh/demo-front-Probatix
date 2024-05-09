@@ -6,7 +6,6 @@ import Message from "../../Public/Message";
 import "./CRUDApplication.scss";
 
 function AddApplcation() {
-  const [id, setId] = useState();
   const [name, setName] = useState();
   const [secret, setSecret] = useState();
   const [lang, setLang] = useState();
@@ -14,17 +13,18 @@ function AddApplcation() {
   const [message, setMessage] = useState({});
   const history = useHistory();
   const location = useLocation();
-  const setMessageEmpty = () => {// show notification a period of time 
+  const setMessageEmpty = () => {
+    // show notification a period of time
     setTimeout(function () {
       setMessage("");
     }, 5000);
   };
 
-  const handleSubmit = async (e) => { // post current applcation
+  const handleSubmit = async (e) => {
+    // post current applcation
     e.preventDefault();
     axios
       .post("http://localhost:3000/api/applications", {
-        id: id,
         name: name,
         secret: secret,
         lang: lang,
@@ -35,7 +35,8 @@ function AddApplcation() {
       })
       .catch(function (error) {
         console.log(error);
-        setMessage({// don't post current application for repeating of id and show the reason
+        setMessage({
+          // don't post current application for repeating of id and show the reason
           message: error.response.data.status,
           status: error.response.status,
         });
@@ -48,12 +49,6 @@ function AddApplcation() {
       <Header title="Add new Application" location={location.pathname} />
       <div className="crud-form">
         <form onSubmit={handleSubmit} className="crud-form__card">
-          <label htmlFor="id">Id:</label>
-          <input
-            name="id"
-            type="text"
-            onChange={(e) => setId(e.target.value)}
-          />
           <label htmlFor="name">Name:</label>
           <input
             name="name"

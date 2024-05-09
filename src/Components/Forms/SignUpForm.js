@@ -5,11 +5,11 @@ import { reduxForm, Field } from "redux-form";
 let SignUpForm = (props) => {
   const { handleSubmit } = props;
 
-  let inputItems = [ //all input
+  let inputItems = [
+    //all input
     { name: "firstname", type: "input" },
     { name: "lastname", type: "input" },
     { name: "email", type: "email" },
-    { name: "username", type: "input" },
     { name: "password", type: "password" },
   ];
 

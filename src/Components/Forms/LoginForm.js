@@ -4,8 +4,9 @@ import { reduxForm, Field } from "redux-form";
 
 let LoginForm = (props) => {
   const { handleSubmit } = props;
-  let inputItems = [//all inputs
-    { name: "username", type: "input" },
+  let inputItems = [
+    //all inputs
+    { name: "email", type: "input" },
     { name: "password", type: "password" },
   ];
 

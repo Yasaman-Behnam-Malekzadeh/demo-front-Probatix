@@ -10,7 +10,7 @@ function Messages({ responseMessage, responseStatus }) {
         break;
       case 200:
         message =
-          "User successfully created:) Please Login with your Username and Password.";
+          "User successfully created:) Please Login with your Email and Password.";
         break;
       case 400:
         message = "User already exists!";

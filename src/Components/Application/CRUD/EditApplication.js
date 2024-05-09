@@ -19,7 +19,8 @@ function EditApplcation() {
   const location = useLocation();
 
   useEffect(() => {
-    const getData = () => {// get all details of selected application
+    const getData = () => {
+      // get all details of selected application
       axios
         .get(`http://localhost:3000/api/applications/${idApp}`, {
           headers: {
@@ -28,8 +29,8 @@ function EditApplcation() {
           },
         })
         .then((res) => {
-          setApplications(res.data);//after get the details,push it on to a state
-          setLoading(false);//after get change loading
+          setApplications(res.data); //after get the details,push it on to a state
+          setLoading(false); //after get change loading
         })
         .catch((error) => {
           console.log(error);
@@ -41,8 +42,9 @@ function EditApplcation() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:3000/api/applications/${idApp}`, { //post detail of current application
-        id: id,
+      .put(`http://localhost:3000/api/applications/${idApp}`, {
+        //post detail of current application
+        // id: id,
         name: name,
         secret: secret,
         lang: lang,
@@ -67,14 +69,14 @@ function EditApplcation() {
           />
           <div className="crud-form">
             <form onSubmit={handleSubmit} className="crud-form__card">
-              <label htmlFor="id">Id:</label>
+              {/* <label htmlFor="id">Id:</label>
               <input
                 name="id"
                 type="text"
                 defaultValue={applications.id}
                 onChange={(e) => setId(e.target.value)}
                 disabled
-              />
+              /> */}
               <label htmlFor="name">Name:</label>
               <input
                 name="name"

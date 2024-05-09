@@ -11,7 +11,8 @@ function ApplicationList() {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
 
-  useEffect(() => { // get all applications create in current user
+  useEffect(() => {
+    // get all applications create in current user
     axios
       .get("http://localhost:3000/api/applications", {
         headers: {
@@ -20,8 +21,9 @@ function ApplicationList() {
         },
       })
       .then((res) => {
-        setApplications(res.data);
-        setLoading(false);//after get change loading
+        console.log(res.data["hydra:member"]);
+        setApplications(res.data["hydra:member"]);
+        setLoading(false); //after get change loading
       })
       .catch((error) => {
         console.log(error);
@@ -43,12 +45,11 @@ function ApplicationList() {
           <table className="application-list__content__table">
             <thead>
               <tr>
-                <th>id</th>
                 <th>name</th>
                 <th>secret</th>
                 <th>lang</th>
                 <th>version</th>
-                <th>action</th>
+                <th>actions</th>
               </tr>
             </thead>
             <tbody>

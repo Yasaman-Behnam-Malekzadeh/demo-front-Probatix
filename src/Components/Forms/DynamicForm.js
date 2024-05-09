@@ -11,18 +11,19 @@ function IncomeForm() {
   const [message, setMessage] = useState({});
   const history = useHistory();
 
-
-  const setMessageEmpty = () => { // show notification a period of time 
+  const setMessageEmpty = () => {
+    // show notification a period of time
     setTimeout(function () {
       setMessage("");
     }, 5000);
   };
-  const handleSignUpSubmit = async (value) => { // post a new user
+  const handleSignUpSubmit = async (value) => {
+    // post a new user
     axios
       .post(
-        "http://localhost:3000/api/users",
+        "http://localhost:3000/api/register",
         {
-          username: value.username,
+          email: value.email,
           password: value.password,
         },
         {
@@ -32,24 +33,27 @@ function IncomeForm() {
         }
       )
       .then(function (response) {
-        setMessage({ //show the notifaction to user
+        setMessage({
+          //show the notifaction to user
           message: response.data.status,
           status: response.status,
         });
         setMessageEmpty();
       })
       .catch(function (error) {
-        setMessage({ //show the notifaction to user
+        setMessage({
+          //show the notifaction to user
           message: error.response.data.error.message,
           status: error.response.status,
         });
         setMessageEmpty();
       });
   };
-  const handleLoginSubmit = async (value) => {// login with username and password
+  const handleLoginSubmit = async (value) => {
+    // login with username and password
     axios
-      .post("http://localhost:3000/api/users/login", {
-        username: value.username,
+      .post("http://localhost:3000/api/login", {
+        email: value.email,
         password: value.password,
       })
       .then(function () {
@@ -67,7 +71,7 @@ function IncomeForm() {
   return (
     <div className="form">
       <div className="form__wrapper">
-        <div className="form__wrapper__selector"> 
+        <div className="form__wrapper__selector">
           <button
             className={changeBtn === true ? "active" : null}
             onClick={() => setChangeBtn(!changeBtn)}

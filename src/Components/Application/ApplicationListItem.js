@@ -5,7 +5,8 @@ import { Link, useHistory } from "react-router-dom";
 
 function ApplicationListItem({ applicationsList }) {
   const history = useHistory();
-  const handleRemove = (item) => {//delete selected application
+  const handleRemove = (item) => {
+    //delete selected application
     axios
       .delete(`http://localhost:3000/api/applications/${item}`)
       .then(() => {
@@ -17,10 +18,10 @@ function ApplicationListItem({ applicationsList }) {
   };
   return (
     <>
+      {console.log(applicationsList)}
       {applicationsList.map((item) => {
         return (
           <tr className="application-list-item" key={item.id}>
-            <td>{item.id}</td>
             <td>{item.name}</td>
             <td>{item.secret}</td>
             <td>{item.lang}</td>
