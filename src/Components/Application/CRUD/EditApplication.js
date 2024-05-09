@@ -69,14 +69,6 @@ function EditApplcation() {
           />
           <div className="crud-form">
             <form onSubmit={handleSubmit} className="crud-form__card">
-              {/* <label htmlFor="id">Id:</label>
-              <input
-                name="id"
-                type="text"
-                defaultValue={applications.id}
-                onChange={(e) => setId(e.target.value)}
-                disabled
-              /> */}
               <label htmlFor="name">Name:</label>
               <input
                 name="name"

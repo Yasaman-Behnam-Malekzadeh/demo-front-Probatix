@@ -47,7 +47,7 @@ function AddApplcation() {
   return (
     <>
       <Header title="Add new Application" location={location.pathname} />
-      <div className="crud-form">
+      <div className="crud-form d-flex justify-content-center h-100">
         <form onSubmit={handleSubmit} className="crud-form__card">
           <label htmlFor="name">Name:</label>
           <input
