@@ -21,7 +21,7 @@ function EditApplcation() {
     const getData = () => {
       // get all details of selected application
       axios
-        .get(`http://localhost:3000/api/applications/${idApp}`, {
+        .get(`/api/applications/${idApp}`, {
           headers: {
             "Content-Type": "application/json",
             withCredentials: true,
@@ -41,7 +41,7 @@ function EditApplcation() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:3000/api/applications/${idApp}`, {
+      .put(`/api/applications/${idApp}`, {
         //post detail of current application
         // id: id,
         name: name,

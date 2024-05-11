@@ -8,7 +8,7 @@ function ApplicationListItem({ applicationsList }) {
   const handleRemove = (item) => {
     //delete selected application
     axios
-      .delete(`http://localhost:3000/api/applications/${item}`)
+      .delete(`/api/applications/${item}`)
       .then(() => {
         history.push("/applications");
       })

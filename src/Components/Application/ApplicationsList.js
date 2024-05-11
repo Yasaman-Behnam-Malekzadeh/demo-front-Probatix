@@ -14,7 +14,7 @@ function ApplicationList() {
   useEffect(() => {
     // get all applications create in current user
     axios
-      .get("http://localhost:3000/api/applications", {
+      .get("/api/applications", {
         headers: {
           "Content-Type": "application/json",
           withCredentials: true,

@@ -21,7 +21,7 @@ function IncomeForm() {
     // post a new user
     axios
       .post(
-        "http://localhost:3000/api/register",
+        "/api/register",
         {
           email: value.email,
           password: value.password,
@@ -52,7 +52,7 @@ function IncomeForm() {
   const handleLoginSubmit = async (value) => {
     // login with username and password
     axios
-      .post("http://localhost:3000/api/login", {
+      .post("/api/login", {
         email: value.email,
         password: value.password,
       })

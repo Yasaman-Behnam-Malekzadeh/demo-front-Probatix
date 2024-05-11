@@ -24,7 +24,7 @@ function AddApplcation() {
     // post current applcation
     e.preventDefault();
     axios
-      .post("http://localhost:3000/api/applications", {
+      .post("/api/applications", {
         name: name,
         secret: secret,
         lang: lang,
