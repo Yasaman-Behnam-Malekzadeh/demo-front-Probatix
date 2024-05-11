@@ -6,7 +6,6 @@ import Header from "../../Layout/Header";
 import "./CRUDApplication.scss";
 
 function EditApplcation() {
-  const [id, setId] = useState();
   const [name, setName] = useState();
   const [secret, setSecret] = useState();
   const [lang, setLang] = useState();
